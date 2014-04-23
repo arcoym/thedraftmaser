@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript">
+
+	var setValue = function(value) {
+		$.get("http://localhost:8080/state/" + value);
+	}
+
+	</script>
+	
+	</head>
+	<body>
+	
+	What would you like to do: 
+	<button id="openDM" onclick="setValue(1);">Open Draftmaster</button>
+	<button id="closeDM" onclick="setValue(0)">Close Draftmaster</button>
+	</body>
+</html>
