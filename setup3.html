@@ -3,16 +3,9 @@
 	<head>
 	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<script type="text/javascript">
-
-	var setValue = function(value) {
-		$.get("http://localhost:8080/state/" + value);
-	}
-
-	</script>
-	
 	</head>
 	<body>
+	
 		 <style>
 			#container {
 				width: 90%;
@@ -39,7 +32,6 @@
 				font-weight: bold;
 			}
 
-
 			a {
 				text-decoration: none;
 				color: black;
@@ -64,55 +56,24 @@
 			.alignLeft {
 				float:right;
 			}
-			.button {
-				padding: 5px;
-				background: rgb(0,0,0);
-				color: rgb(255,255,255);
-				border-color: black;
-				-moz-border-radius: 15px;
-  				-webkit-border-radius: 15px;
-			}
-
-			#tempDisplay {
-				margin-top: 30px;
-				font-size: 16px;
-				line-height: 120%;
-			}
-
-			#tempLarge {
-				font-family: Times, Serif; 
-				font-size: 40px;
-				line-height: 120%;
-			}
 
 		</style>
 
-		<div id="header">
+		<div id= "container">
+			<div id="header">
 				<img src="http://166.78.159.225/~arc507/uploads/logo.png" height="50px">
 				<a href="#">HELP</a>
 				<a href="#">ABOUT</a>
 				<a href="#">SETTING</a>
 			</div>
-		<div id= "container">
 			<div id="text">
-				<div id="tempDisplay">
-					Current temperature at home: 
-					</br>
-					</br>
-					</br>
-					<div id="tempLarge">
-						23 degrees celsius				
-					</div>
-					</br>
-					</br>
-				</div>
-			</div>
-			<button id="openDM" onclick="setValue(1);">Open Draftmaster</button>
-			<hr>
-			<button id="closeDM" onclick="setValue(0)">Close Draftmaster</button>
-			<hr>
-			<form method='get' action='/setup'>
-				<button id="button">Set up</button>
+			
+				Hi <%= name %>, 
+				To make sure we know what's happening on both sides of the window, tell us a little more about you.
+
+			<form method="POST" action="/setup3">
+				What is your zipcode?<input type="text" name="zipcode" value="zipcode"><br>
+				<input type="submit" value="Next">
 			</form>
 		</div>
 	</body>

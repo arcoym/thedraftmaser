@@ -2,18 +2,9 @@
 <html>
 	<head>
 	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <!--<link rel="stylesheet" type="text/css" href="/css/style.css" /> -->
 
-	<script type="text/javascript">
-
-	var setValue = function(value) {
-		$.get("http://localhost:8080/state/" + value);
-	}
-
-	</script>
-	
-	</head>
-	<body>
-		 <style>
+	 <style>
 			#container {
 				width: 90%;
 				height:100%;
@@ -38,7 +29,6 @@
 				font-family: Helvetica, Verdana, Sans-Serif;
 				font-weight: bold;
 			}
-
 
 			a {
 				text-decoration: none;
@@ -73,46 +63,28 @@
   				-webkit-border-radius: 15px;
 			}
 
-			#tempDisplay {
-				margin-top: 30px;
-				font-size: 16px;
-				line-height: 120%;
-			}
-
-			#tempLarge {
-				font-family: Times, Serif; 
-				font-size: 40px;
-				line-height: 120%;
-			}
-
 		</style>
 
-		<div id="header">
+	</head>
+	<body>
+	
+		<div id= "container">
+			<div id="header">
 				<img src="http://166.78.159.225/~arc507/uploads/logo.png" height="50px">
 				<a href="#">HELP</a>
 				<a href="#">ABOUT</a>
 				<a href="#">SETTING</a>
 			</div>
-		<div id= "container">
 			<div id="text">
-				<div id="tempDisplay">
-					Current temperature at home: 
-					</br>
-					</br>
-					</br>
-					<div id="tempLarge">
-						23 degrees celsius				
-					</div>
-					</br>
-					</br>
-				</div>
+			Hi! Welcome to your very own, brand new "THE DRAFTMASTER" (disclaimer: we like to write things in ALL CAPS). Getting set up is really easy, we just need to ask you a couple of questions that make it easier for us to make you more comfortable.
 			</div>
-			<button id="openDM" onclick="setValue(1);">Open Draftmaster</button>
-			<hr>
-			<button id="closeDM" onclick="setValue(0)">Close Draftmaster</button>
-			<hr>
-			<form method='get' action='/setup'>
-				<button id="button">Set up</button>
+			</br>
+			<form method="get" action="/ready">
+				<button id="ready" name="ready" value="1">Ready? Let's do this!</button>
+			</br>
+			</br>
+			</form>	<form method="get" action="/later">
+				<button id="later" name="later" value"0">Maybe later!</button>
 			</form>
 		</div>
 	</body>

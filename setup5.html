@@ -3,17 +3,9 @@
 	<head>
 	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<script type="text/javascript">
-
-	var setValue = function(value) {
-		$.get("http://localhost:8080/state/" + value);
-	}
-
-	</script>
-	
 	</head>
 	<body>
-		 <style>
+	 <style>
 			#container {
 				width: 90%;
 				height:100%;
@@ -39,7 +31,6 @@
 				font-weight: bold;
 			}
 
-
 			a {
 				text-decoration: none;
 				color: black;
@@ -60,59 +51,31 @@
 				font-size: 14px;
 				font-family: Helvetica, Verdana, Sans-Serif;
 			}
-			
+
 			.alignLeft {
 				float:right;
-			}
-			.button {
-				padding: 5px;
-				background: rgb(0,0,0);
-				color: rgb(255,255,255);
-				border-color: black;
-				-moz-border-radius: 15px;
-  				-webkit-border-radius: 15px;
-			}
-
-			#tempDisplay {
-				margin-top: 30px;
-				font-size: 16px;
-				line-height: 120%;
-			}
-
-			#tempLarge {
-				font-family: Times, Serif; 
-				font-size: 40px;
-				line-height: 120%;
 			}
 
 		</style>
 
-		<div id="header">
+		<div id= "container">
+			<div id="header">
 				<img src="http://166.78.159.225/~arc507/uploads/logo.png" height="50px">
 				<a href="#">HELP</a>
 				<a href="#">ABOUT</a>
 				<a href="#">SETTING</a>
 			</div>
-		<div id= "container">
 			<div id="text">
-				<div id="tempDisplay">
-					Current temperature at home: 
-					</br>
-					</br>
-					</br>
-					<div id="tempLarge">
-						23 degrees celsius				
-					</div>
-					</br>
-					</br>
-				</div>
+			
+			And most importantly, what would you say your optimal temperature is? (don't worry, you can change this at any time)
 			</div>
-			<button id="openDM" onclick="setValue(1);">Open Draftmaster</button>
-			<hr>
-			<button id="closeDM" onclick="setValue(0)">Close Draftmaster</button>
-			<hr>
-			<form method='get' action='/setup'>
-				<button id="button">Set up</button>
+			<form method="POST" action="/setup5">
+				<button id="range" name="range" value="1">colder</button>
+				<button id="range" name="range" value="2"><%= range1 %></button>
+				<button id="range" name="range" value="3"><%= range2 %></button>
+				<button id="range" name="range" value="4"><%= range3 %></button>
+				<button id="range" name="range" value="5">hotter</button>
+				<button id="range" name="range" value="6">I don't know</button>
 			</form>
 		</div>
 	</body>

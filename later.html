@@ -3,16 +3,9 @@
 	<head>
 	 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<script type="text/javascript">
-
-	var setValue = function(value) {
-		$.get("http://localhost:8080/state/" + value);
-	}
-
-	</script>
-	
 	</head>
 	<body>
+	
 		 <style>
 			#container {
 				width: 90%;
@@ -39,7 +32,6 @@
 				font-weight: bold;
 			}
 
-
 			a {
 				text-decoration: none;
 				color: black;
@@ -60,10 +52,11 @@
 				font-size: 14px;
 				font-family: Helvetica, Verdana, Sans-Serif;
 			}
-			
+
 			.alignLeft {
 				float:right;
 			}
+
 			.button {
 				padding: 5px;
 				background: rgb(0,0,0);
@@ -72,48 +65,14 @@
 				-moz-border-radius: 15px;
   				-webkit-border-radius: 15px;
 			}
-
-			#tempDisplay {
-				margin-top: 30px;
-				font-size: 16px;
-				line-height: 120%;
-			}
-
-			#tempLarge {
-				font-family: Times, Serif; 
-				font-size: 40px;
-				line-height: 120%;
-			}
-
 		</style>
-
-		<div id="header">
-				<img src="http://166.78.159.225/~arc507/uploads/logo.png" height="50px">
-				<a href="#">HELP</a>
-				<a href="#">ABOUT</a>
-				<a href="#">SETTING</a>
-			</div>
 		<div id= "container">
 			<div id="text">
-				<div id="tempDisplay">
-					Current temperature at home: 
-					</br>
-					</br>
-					</br>
-					<div id="tempLarge">
-						23 degrees celsius				
-					</div>
-					</br>
-					</br>
-				</div>
-			</div>
-			<button id="openDM" onclick="setValue(1);">Open Draftmaster</button>
+				
+			No time to set up right now? That's totally fine, we'll remind you later. 
 			<hr>
-			<button id="closeDM" onclick="setValue(0)">Close Draftmaster</button>
-			<hr>
-			<form method='get' action='/setup'>
-				<button id="button">Set up</button>
-			</form>
+			Without the set up you can only use THE DRAFTMASTER manually via the buttons on the unit, once you've answered the initial setup questions we can make the magic happen and have THE DRAFTMASTER do it all for you. 
+			</div>	
 		</div>
 	</body>
 </html>
